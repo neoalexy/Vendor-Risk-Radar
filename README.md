@@ -60,6 +60,13 @@ GITHUB_TOKEN=your_token  # optional, for GitHub Advisory feed
 - [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) — actively exploited vulnerabilities
 - [GitHub Security Advisories](https://github.com/advisories) — ecosystem advisories
 
+## Limitations
+
+- Vendor matching is based on keyword search and may introduce false positives or miss relevant CVEs
+- CVE data from NVD can be incomplete or delayed
+- Attack category mapping is heuristic-based and may not capture complex exploit chains
+- Risk scoring is not asset-aware and does not consider specific deployment contexts
+
 ## Stack
 
 Python · SQLite · Groq (Llama 3.3 70B) · Rich · fpdf2
