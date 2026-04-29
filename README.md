@@ -8,10 +8,10 @@ Built to answer a simple question: before your organization trusts a SaaS vendor
 
 The tool pulls CVE data from NVD and checks each vulnerability against CISA's Known Exploited Vulnerabilities catalog. Each CVE gets mapped to an attack category (RCE, auth bypass, injection, privilege escalation, data exposure, misconfig, supply chain) and scored based on three factors:
 
-- **CVSS base score** — severity of the vulnerability
-- **Attack category weight** — RCE weighted at 1.8x, auth bypass at 1.6x, down to misconfig at 1.0x
-- **Recency multiplier** — CVEs under 90 days old scored at 1.5x, over 3 years at 0.7x
-- **KEV penalty** — actively exploited vulnerabilities apply a 2.5x multiplier
+- **CVSS base score** - severity of the vulnerability
+- **Attack category weight** - RCE weighted at 1.8x, auth bypass at 1.6x, down to misconfig at 1.0x
+- **Recency multiplier** - CVEs under 90 days old scored at 1.5x, over 3 years at 0.7x
+- **KEV penalty** - actively exploited vulnerabilities apply a 2.5x multiplier
 
 All scan results are stored in a local SQLite database. Running the tool twice on the same vendor shows exactly which CVEs are new since the last scan.
 
@@ -39,6 +39,8 @@ Each scan produces:
 - LLM-generated risk narrative with attack scenarios and recommendations
 - PDF report export
 
+Sample report: [okta_sample_report.pdf](examples/okta_sample_report.pdf)
+
 ## Setup
 
 ```bash
@@ -56,9 +58,9 @@ GITHUB_TOKEN=your_token  # optional, for GitHub Advisory feed
 
 ## Data sources
 
-- [NVD](https://nvd.nist.gov/) — CVE database
-- [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) — actively exploited vulnerabilities
-- [GitHub Security Advisories](https://github.com/advisories) — ecosystem advisories
+- [NVD](https://nvd.nist.gov/) - CVE database
+- [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) - actively exploited vulnerabilities
+- [GitHub Security Advisories](https://github.com/advisories) - ecosystem advisories
 
 ## Limitations
 
