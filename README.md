@@ -39,7 +39,7 @@ Each scan produces:
 - LLM-generated risk narrative with attack scenarios and recommendations
 - PDF report export
 
-Sample report: [okta_sample_report.pdf](examples/okta_sample_report.pdf)
+Sample report: [okta_risk_report.pdf](examples/okta_risk_report.pdf)
 
 ## Setup
 
